@@ -12,3 +12,5 @@ Run below docker compose command
 docker-compose up --build
 ```
 Access Apache Airflow on http://localhost:{airflow_port_number}
+
+Access Metabase UI on http://localhost:{METABASE_PORT}
