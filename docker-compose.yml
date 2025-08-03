@@ -30,5 +30,19 @@ services:
     ports:
       - ${AIRFLOW_PORT}:8080
 
+  metabase:
+    image: metabase/metabase
+    ports:
+      - ${METABASE_PORT}:3000
+    depends_on:
+      - db
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: ${POSTGRES_DB}
+      MB_DB_PORT: ${POSTGRES_PORT}
+      MB_DB_USER: ${POSTGRES_USER}
+      MB_DB_PASS: ${POSTGRES_PASSWORD}
+      MB_DB_HOST: ${POSTGRES_HOST}
+
 volumes:
   pgdata:
